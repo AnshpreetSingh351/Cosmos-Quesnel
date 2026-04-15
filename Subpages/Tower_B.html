@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Cosmos Quesnel</title>
+    <link rel="stylesheet" href="./../wbn05d6fbh.css">
+    <link rel="stylesheet" href="./../JS/CSS/rb16lq8yi1.css">
+    <link rel="stylesheet" href="./../JS/Notification/bz0mp28u74.css">
+    <style>
+        @media (max-width: 600px) {
+            .Front {
+                position: fixed;
+                top: 55%;
+                left: 50%;
+            }
+        }
+
+
+        .call-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+
+            /* reduced gap */
+            padding: 11px 1px;
+            /* smaller height */
+
+            border-radius: 8px;
+            /* slightly tighter */
+            font-weight: 600;
+            font-size: 14px;
+            /* smaller text */
+            text-decoration: none;
+
+            background: #C9A87C;
+            color: #111;
+
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+            transition: all 0.2s ease;
+        }
+
+        /* hover */
+        .call-btn:hover {
+            background: #0078be;
+            color: #fff;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script>
+        sessionStorage.setItem('lastTower', 'B');
+    </script>
+
+
+    <div id="ui-hint" class="ui-hint" aria-live="polite" role="status">
+        <div class="ui-hint__row ui-hint__desktop">
+            <svg width="18" height="24" viewBox="0 0 18 24" aria-hidden="true">
+                <path d="M9 1c3.9 0 7 3.1 7 7v8c0 3.9-3.1 7-7 7s-7-3.1-7-7V8c0-3.9 3.1-7 7-7z" fill="white"
+                    opacity=".18" />
+                <rect x="8" y="4" width="2" height="5" rx="1" fill="white" />
+                <rect x="5" y="10" width="8" height="9" rx="4" fill="white" opacity=".4" />
+            </svg>
+            <span>Click on Floor To See Aparments</span>
+        </div>
+        <div class="ui-hint__row ui-hint__touch">
+            <svg width="18" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                    d="M12 2a4 4 0 014 4v4h1.2a2.8 2.8 0 012.8 2.8V16c0 3.3-2.7 6-6 6H9.5A5.5 5.5 0 014 16.5V11a3 3 0 016 0v3h1V6a4 4 0 011-2.7z"
+                    fill="white" opacity=".28" />
+                <rect x="11" y="5" width="2" height="9" rx="1" fill="white" />
+            </svg>
+            <span>Click on Tower's To Select Floor</span>
+        </div>
+    </div>
+
+    <button class="close-btn" id="closeCard">←</button>
+
+    <div id="infoCard" class="info-card">
+        <div class="info-content">
+            <h2 class="project-title">Cosmos Quesnel</h2>
+            <p class="tower-name">Tower B</p>
+            <div class="info-details" id="details"></div>
+            <!-- enquiry-btn intentionally removed from here -->
+        </div>
+    </div>
+
+    <div id="floorTip" class="floortip" aria-hidden="true"></div>
+
+    <div class="Front">
+        <div class="image-wrapper">
+            <img id="mainImage" src="./../images/Thumbnail/Tower_B.webp" data-full="./../images/Tower_B.jpg"
+                alt="Tower_2" fetchpriority="high" decoding="async" width="3840" height="5830" class="blur-up" />
+            <div class="Cutout">
+                <svg viewBox="0 0 3840 5830" xmlns="http://www.w3.org/2000/svg">
+                    <!-- <path id="Apparments" data-link="./1BHK/Lobby_Top.html" data-name="Floor_02"
+                        d="m2667.08 2882-.36 7.94-128.34 221.09-14.66-1.17-8 11.67-108.84-15.67.34-10 4.83-6h-16.83l-7.84 13-118.83-17.17v-8.83l3.5-4.67-15-.33-8.5 10.5-98.5-14.83v-8.17l-16.67 11-22.16-2-4.67 3.33-203.11-27.22-.67-6-23-.67 1.22-8.72-89.66-10.45v-14.83l-7.22-.67-12.67 12.39-96.78-13.39v-6.34l-14.5-.89-4.23 4.84-78.59-14.92-6.57 6.09-6.32-156.75 9.33-6.22v-10.66l-16.88-15.56-.77-64.11-10.23-7.56-15.11 13.78-122.8-114.4v-59.11l-5.77-11.56 1262.44 145.79.23 6.78-5.56 7.11-1.44 41.55 5.88-.22-.11 10.67-6.22 8.67-4.21 75.74 8.21-.19-2.81 28.89 3.11-2 5.34.44Z" /> -->
+                    <path id="Floor_06" data-link="./1BHK/Lobby_Top.html" data-name="Floor 06"
+                        d="M3184.47 2279.44v5.34l-14.44 6.44v9.56l-14 6.66v127.73l-5.84.33-.16 8.5 5.33 2.33v37l-550.89-2.77 8-5.89-468.5-1.56-2.89 6.67-598.11-2.2-4.66-5.58-237.28-.5 8.33 5.5-300.44-.11-11.84-6.06-238.94-.94 20.17 7-281.17-1.56-352.47-.77-.07-106.56h-2.63v-2.63l181.86.8v-66.89l-232-91.78v-19.33h167.34V2120l-18.67-10-.17-12-20.16-10.67V2081h39v-14.67l518.64 2.11 42.55 32.89 182.22 1.23.78-9.89-4.22-4.11-.67-6.23 9.78.23.11-13.34 1897.06 7.5-1.17 15.34h38.33l-.83 6.83-16.33 13.67-.5 9-20.67 15 1.67 129 249.89.77.88 12.23z"
+                        class="st0" />
+                    <path id="Floor_05" data-link="./1BHK/Lobby_Top.html" data-name="Floor 05"
+                        d="m3554.69 2444.97-15.75 4.59-.5 14.41-15.16 4.59v275.33l-361.89-2.78 17.11-3.89-265.44.45-14 2.66-295.56-1.58 11-2.86-470 .33-606.33 2.53h-529.23l-12.52-1.42H144.17l.61-105.72h-2.59v-3.25l181 .92.48-109.11-179-45.61 352.47.77 281.17 1.56-20.17-7 238.94.94 11.84 6.06 300.44.11-8.33-5.5 237.28.5 4.66 5.58 598.11 2.2 2.89-6.67 468.5 1.56-8 5.89 550.89 2.77v-37l-5.33-2.33.16-8.5 5.84-.33 398.16 1.3z"
+                        class="st0" />
+                    <path id="Floor_04" data-link="./1BHK/Lobby_Top.html" data-name="Floor 04"
+                        d="m3523.5 2999.92-3200.44-.47-178.5-.03.58-106.48h-2.95v-2.88l180.45.88v-135.22l-178.47-18.39h852.25l12.52 1.42h529.23l606.33-2.53 470-.33-11 2.86 295.56 1.58 14-2.66 265.44-.45-17.11 3.89 361.89 2.78z"
+                        class="st0" />
+                    <path id="Floor_03" data-link="./1BHK/Lobby_Top.html" data-name="Floor 03"
+                        d="m3523.5 2999.92-.79 267.21-345-6.12-264.67.45-13.78-3.56-284.94 4.5-470.33 1.84-5.17-6.34-595.56 1.89-6.33 5.34-235 .66-292.67-4.33-12 5.67h-239v-4.34l-435.33-.08-177.58-.03.41-106.08h-3.37v-2.46l180.17-24.83.5-129.86z"
+                        class="st0" />
+                    <path id="Floor_02" data-link="./1BHK/Lobby_Top.html" data-name="Floor 03"
+                        d="m3523.86 3498.22-22.33-.33v14.33l-323.67.89-.78 10.56-255 1.11-18.5-12.17-289.11 1.56-.55 11.44-475.84 1.95-6.66-11.17-585.78 1.72-7.67 11-232.11.78v-10.67l-293.55.56-15.56 11.33-232.89.56s-.17-10.5 0-11-260.28.39-260.28.39l-5.66 3.44-353.45.56.61-105.99-3.08.37.39-2.65 180.54-52.89v-101.19l435.33.08v4.34h239l12-5.67 292.67 4.33 235-.66 6.33-5.34 595.56-1.89 5.17 6.34 470.33-1.84 284.94-4.5 13.78 3.56 264.67-.45 345 6.12z"
+                        class="st0" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- ══ SLIDE-IN ENQUIRY PANEL ══ -->
+    <div class="enquiry">
+        <div class="overlay" id="enquiryOverlay" aria-hidden="true">
+            <div class="modal" role="dialog" aria-labelledby="enquiryTitle">
+                <div class="modal-header">
+                    <div id="enquiryTitle" class="title">Request Callback</div>
+                    <button class="close" id="closeBtn" aria-label="Close">✕</button>
+                </div>
+                <div class="modal-body">
+                    <form id="enquiryForm" class="form" novalidate>
+
+                        <input class="input" name="fullName" placeholder="Full Name" required />
+
+                        <div class="phone">
+                            <select name="dialCode" aria-label="Country Code">
+                                <option>+91</option>
+                                <option>+971</option>
+                                <option>+44</option>
+                                <option>+1</option>
+                            </select>
+                            <input type="tel" name="phone" placeholder="Phone Number" maxlength="10" pattern="[0-9]{10}"
+                                inputmode="numeric" oninput="this.value=this.value.replace(/[^0-9]/g,'')" required />
+                        </div>
+
+                        <input class="input" name="city" placeholder="City" required />
+
+                        <input class="input" type="email" name="email" placeholder="Email Address"
+                            pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required />
+
+                        <select class="input select" name="preferredTime" required>
+                            <option value="" disabled selected>Preferred Time to Call</option>
+                            <option value="morning">Morning</option>
+                            <option value="afternoon">Afternoon</option>
+                            <option value="evening">Evening</option>
+                        </select>
+
+                        <!-- Google reCAPTCHA — replace YOUR_SITE_KEY -->
+                        <div class="g-recaptcha" data-sitekey="6Le6qZQsAAAAALlNrziohJHHqf43BSZvE1wfoxnl"></div>
+
+                        <button class="submit" type="submit">Request a Call Back</button>
+
+                        <a href="tel:+919876543210" class="call-btn">
+                            📞 Call Now
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button class="enquiry-btn" id="openEnquiry">Request Call Back</button> -->
+
+
+
+
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const detailsBox = document.getElementById('details');
+
+            detailsBox.innerHTML = `
+        <div><span>1BHK</span><span>: 48</span></div>
+    `;
+        });
+    </script>
+
+
+
+
+
+
+
+    <script src="./../JS/dec7d4pmru.js"></script>
+    <script src="./../JS/Notification/xoqrfe8095.js"></script>
+    <script src="./../JS/BackButton.js"></script>
+
+    <script src="./../JS/s2dlrxbqxj.js"></script>
+    <script src="./../JS/5guwuzaijb.js"></script>
+    <script src="./../JS/ky0nwmerow.js"></script>
+
+
+
+
+
+    <!-- JUMPBAR — macOS Dock Style -->
+    <div class="dock-wrap" id="dock">
+        <div class="dock-shelf"></div>
+        <div class="dock-items" id="dockItems">
+            <a class="dock-item" href="../index.html">
+                <span class="dock-label">Home</span>
+                <div class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+                <span class="dock-item-label">Home</span><span class="dock-dot"></span>
+            </a>
+            <div class="dock-divider"></div>
+            <a class="dock-item" href="Tower_A.html">
+                <span class="dock-label">Front</span>
+                <div class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18z"/><path d="M6 12H4a2 2 0 00-2 2v8h4"/><path d="M18 12h2a2 2 0 012 2v8h-4"/><path d="M10 7h4"/><path d="M10 12h4"/><path d="M10 17h4"/></svg></div>
+                <span class="dock-item-label">Front</span><span class="dock-dot"></span>
+            </a>
+            <div class="dock-divider"></div>
+            <!-- <a class="dock-item is-accent" href="Tower_B.html">
+                <span class="dock-label">Back</span>
+                <div class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 012-2h8a2 2 0 012 2v18z"/><path d="M6 12H4a2 2 0 00-2 2v8h4"/><path d="M18 12h2a2 2 0 012 2v8h-4"/><path d="M10 7h4"/><path d="M10 12h4"/><path d="M10 17h4"/></svg></div>
+                <span class="dock-item-label">Back</span><span class="dock-dot"></span>
+            </a> -->
+            <div class="dock-divider"></div>
+            <!-- <a class="dock-item" href="GodEye/Parking_01.html">
+                <span class="dock-label">Parking</span>
+                <div class="dock-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M9 16v-8h4a2.5 2.5 0 010 5H9"/></svg></div>
+                <span class="dock-item-label">Parking</span><span class="dock-dot"></span>
+            </a> -->
+        </div>
+    </div>
+    <script>
+    (function(){
+        const items=document.querySelectorAll('.dock-item'),dockItems=document.getElementById('dockItems');
+        if(!dockItems||!items.length)return;
+        const BASE=52,MAX=80,RANGE=140;
+        function magnify(e){items.forEach(item=>{const icon=item.querySelector('.dock-icon'),svg=item.querySelector('.dock-icon svg'),label=item.querySelector('.dock-label'),rect=item.getBoundingClientRect(),cx=rect.left+rect.width/2,dist=Math.abs(e.clientX-cx);if(dist<RANGE){const t=1-dist/RANGE,sz=BASE+(MAX-BASE)*t;icon.style.width=sz+'px';icon.style.height=sz+'px';icon.style.borderRadius=(16+t*4)+'px';const iSz=22+t*10;svg.style.width=iSz+'px';svg.style.height=iSz+'px';item.style.width=sz+'px';if(t>.7){icon.style.background='linear-gradient(145deg,rgba(201,168,124,.2),rgba(201,168,124,.08))';icon.style.borderColor='rgba(201,168,124,.4)';icon.style.boxShadow='0 4px 24px rgba(201,168,124,.2)';svg.style.stroke='#c9a87c';svg.style.filter='drop-shadow(0 0 6px rgba(201,168,124,.4))';label.style.opacity='1';label.style.scale='1';label.style.translate='0 0';}else{reset(icon,svg,label);}}else{icon.style.width=BASE+'px';icon.style.height=BASE+'px';icon.style.borderRadius='16px';svg.style.width='22px';svg.style.height='22px';item.style.width=BASE+'px';reset(icon,svg,label);}});}
+        function reset(icon,svg,label){icon.style.background='';icon.style.borderColor='';icon.style.boxShadow='';svg.style.stroke='';svg.style.filter='';label.style.opacity='0';label.style.scale='.9';label.style.translate='0 6px';}
+        function resetAll(){items.forEach(item=>{const icon=item.querySelector('.dock-icon'),svg=item.querySelector('.dock-icon svg'),label=item.querySelector('.dock-label');icon.style.width=icon.style.height='';icon.style.borderRadius='';svg.style.width=svg.style.height='';item.style.width='';reset(icon,svg,label);});}
+        dockItems.addEventListener('mousemove',magnify);dockItems.addEventListener('mouseleave',resetAll);
+        items.forEach(c=>{c.addEventListener('click',e=>{c.classList.add('is-bouncing');c.addEventListener('animationend',()=>c.classList.remove('is-bouncing'),{once:true});const r=document.createElement('span');r.className='dock-ripple';const icon=c.querySelector('.dock-icon'),b=icon.getBoundingClientRect(),s=Math.max(b.width,b.height);r.style.width=r.style.height=s+'px';r.style.left=(e.clientX-b.left-s/2)+'px';r.style.top=(e.clientY-b.top-s/2)+'px';icon.appendChild(r);r.addEventListener('animationend',()=>r.remove());});});
+    })();
+    </script>
+</body>
+
+</html>
